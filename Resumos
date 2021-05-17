@@ -43,7 +43,20 @@ Fatorizacao de Fermat:
 -> n = (s-t)(s+t)
 -> procurar quadrados perfeitos da forma x^2 - n
 
+Seja R um dominio de integridade que nao é um dominio de Fatorizacao unica: 
+R = Z + i(5^(1/2)) = {a + b (-5^1/2): a,b C Z}
+-> pCR é primo se: 
+    -> p = ab => (a=+-1 V b=+-1)
 
-
+RSA: 
+Criacao da chave publica: 
+                        -> Escolher dois primos distintos p e q e calcula um n = pq e y(n) = (p-1)(q-1)
+                        -> Escolher um e C z(y(n)) em que mdc (e,y(n)) = 1 e d = e^-1
+                        -> chave publica = (n,e)
+                        -> chave privada = d
+Encriptacao: 
+            -> k = x^e, x é a mensagem 
+Desencriptacao: 
+                -> resolver y^d mod(n)
 
 
