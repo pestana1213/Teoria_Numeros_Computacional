@@ -1,0 +1,49 @@
+
+Algoritmo de euclides: 
+
+a,n dois naturais tal que (a,n) = 1 (mdc(a,n)=1)
+
+->Existem dois inteiros x,y tal que: 
+    ax + ny = 1 
+
+    Assim: 
+    -> ax = 1-ny 
+    Donde: 
+    -> ax = 1 mod n 
+
+Um elemento b é invertivel em Zn se mdc(b,n) = 1 
+
+${\rm xgcd}(a,n)$ devolve um terno em que o primeiro elemento é ${\rm mdc}(a,n)$, o segundo elemento é o inverso de $a\ (\!\!\!\!\mod n)$
+
+ #   mdc(a,b)=a*s+b*r  &   xgcd(a,b)=(mdc(a,b),s,r)
+
+ Pequeno Teorema de Fermat: 
+
+ -> n primo, 1<a<n e (a,n)=1
+
+ Entao: 
+    a^(n-1) = 1 mod n 
+    
+    -> Se esta condiçao nao se verificar, entao n nao é primo!
+
+-> Primos gemeos sao primos que distam duas unidades um do outro (sao pares de primos p e p+2)
+-> Primos primos sao primos que distam quatro unidades um do outro (sao pares de primos p e p+4)
+-> Primos sexys sao primos que distam seis unidades um do outro (sao pares de primos p e p+6)
+
+Teorema de Wilson: 
+
+->Um natural p>1 é primo sse (p-1)!= -1 mod p
+
+Teste a Conjetura de Goldbach: 
+-> Todo o natural par maior que tres se pode escrever como a soma de dois numeros primos
+
+Fatorizacao de Fermat:
+-> n impar; 
+-> s e t tal que n = s^2 - t^2
+-> n = (s-t)(s+t)
+-> procurar quadrados perfeitos da forma x^2 - n
+
+
+
+
+
