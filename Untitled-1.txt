@@ -1,0 +1,103 @@
+
+Algoritmo de euclides: 
+
+a,n dois naturais tal que (a,n) = 1 (mdc(a,n)=1)
+
+->Existem dois inteiros x,y tal que: 
+    ax + ny = 1 
+
+    Assim: 
+    -> ax = 1-ny 
+    Donde: 
+    -> ax = 1 mod n 
+
+Um elemento b é invertivel em Zn se mdc(b,n) = 1 
+
+${\rm xgcd}(a,n)$ devolve um terno em que o primeiro elemento é ${\rm mdc}(a,n)$, o segundo elemento é o inverso de $a\ (\!\!\!\!\mod n)$
+
+ #   mdc(a,b)=a*s+b*r  &   xgcd(a,b)=(mdc(a,b),s,r)
+
+ Pequeno Teorema de Fermat: 
+
+ -> n primo, 1<a<n e (a,n)=1
+
+ Entao: 
+    a^(n-1) = 1 mod n 
+    
+    -> Se esta condiçao nao se verificar, entao n nao é primo!
+
+-> Primos gemeos sao primos que distam duas unidades um do outro (sao pares de primos p e p+2)
+-> Primos primos sao primos que distam quatro unidades um do outro (sao pares de primos p e p+4)
+-> Primos sexys sao primos que distam seis unidades um do outro (sao pares de primos p e p+6)
+
+Teorema de Wilson: 
+
+->Um natural p>1 é primo sse (p-1)!= -1 mod p
+
+Teste a Conjetura de Goldbach: 
+-> Todo o natural par maior que tres se pode escrever como a soma de dois numeros primos
+
+Fatorizacao de Fermat:
+-> n impar; 
+-> s e t tal que n = s^2 - t^2
+-> n = (s-t)(s+t)
+-> procurar quadrados perfeitos da forma x^2 - n
+
+Seja R um dominio de integridade que nao é um dominio de Fatorizacao unica: 
+R = Z + i(5^(1/2)) = {a + b (-5^1/2): a,b C Z}
+-> pCR é primo se: 
+    -> p = ab => (a=+-1 V b=+-1)
+
+RSA: 
+Criacao da chave publica: 
+                        -> Escolher dois primos distintos p e q e calcula um n = pq e y(n) = (p-1)(q-1)
+                        -> Escolher um e C z(y(n)) em que mdc (e,y(n)) = 1 e d = e^-1  (Se 3^4 = 1 mod(40) entao y(n)=40)
+                        -> chave publica = (n,e)
+                        -> chave privada = d
+Encriptacao: 
+            -> k = x^e, x é a mensagem 
+Desencriptacao: 
+                -> resolver y^d mod(n)
+
+Verificar se passa no teste de miller: 
+-> n = 2^4 * 3 + 1 na base b = 2; 
+-> n -1 = 2^4 * 3 
+-> s = 4; t = 3;
+-> n passa no teste de miller para a base 2 se: 
+                                            -> b^t = 1 mod(n)
+                                                Ou 
+                                            -> b^(2j * t) = 1 mod(n), 0<=j<s-1
+
+Fatorizar usando o algoritmo (p-1)-Pollard: 
+-> n = 77 (numero a ser fatorizado)
+-> a = 2; b = 2; 
+-> b = b^2 + 1 mod n 
+-> a = a^2 +1 mod n (2 vezes)
+-> calcular d = mdc(a-b,n)
+-> se d = n entao terminar
+
+p-pollard: 
+-> Encontrar um fator nao trivial de n: 
+-> x0 comeca sempre a 2 
+-> fazer a = f(f(x0)) mod n e b = f(x0) mod n 
+-> se mdc(a-b,n)=1, entao fazer outra vez a = f(f(x0)) mod n e b = f(x0)mod n 
+
+(p-1)-pollard: 
+-> fatorizar n 
+-> x0 comeca sempre a 2 
+-> se mdc(2,n)=1 (k=2,3,...)
+-> fazer mdc(2^(k! -1),n)
+
+Lucas lemmer para verificar se sao primos: 
+->r1 começa sempre a 4 
+-> p primo
+-> verificar Mp = 2^p - 1 é primo 
+-> r2 = r1^2 - 2 
+-> fazer ate r(p-1) e se r(p-1) = 0 mod (Mp) 
+
+Solovay-Strossem: 
+-> n é impar 
+-> base b tem de estar entre 1 e n-1
+-> Passa no teste se (b/n) = b^((n-1)/2) mod (n)
+
+
