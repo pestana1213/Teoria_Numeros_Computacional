@@ -1,5 +1,3 @@
-
-
 Algoritmo de euclides: 
 
 a,n dois naturais tal que (a,n) = 1 (mdc(a,n)=1)
@@ -111,3 +109,7 @@ Mostrar que nao existem solucoes para a congruencia:
 
 -> se nao for linear (ax^k = b mod n): 
         -> existem solucoes se b/n = 1
+
+Raizes primitivas: 
+-> Provar que n e raiz primitiva:
+-> K e raiz primitiva de n se ord(esta dentro do mod) k = n
