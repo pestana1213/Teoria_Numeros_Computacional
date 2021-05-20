@@ -1,10 +1,14 @@
 
+
 Algoritmo de euclides: 
 
 a,n dois naturais tal que (a,n) = 1 (mdc(a,n)=1)
 
 ->Existem dois inteiros x,y tal que: 
+Para encontrar o inverso de a em modulo n:
+
     ax + ny = 1 
+-> O inverso e o x
 
     Assim: 
     -> ax = 1-ny 
@@ -51,7 +55,7 @@ R = Z + i(5^(1/2)) = {a + b (-5^1/2): a,b C Z}
 RSA: 
 Criacao da chave publica: 
                         -> Escolher dois primos distintos p e q e calcula um n = pq e y(n) = (p-1)(q-1)
-                        -> Escolher um e C z(y(n)) em que mdc (e,y(n)) = 1 e d = e^-1
+                        -> Escolher um e C z(y(n)) em que mdc (e,y(n)) = 1 e d = e^-1  (Se 3^4 = 1 mod(40) entao y(n)=40)
                         -> chave publica = (n,e)
                         -> chave privada = d
 Encriptacao: 
@@ -59,4 +63,51 @@ Encriptacao:
 Desencriptacao: 
                 -> resolver y^d mod(n)
 
+Verificar se passa no teste de miller: 
+-> n = 2^4 * 3 + 1 na base b = 2; 
+-> n -1 = 2^4 * 3 
+-> s = 4; t = 3;
+-> n passa no teste de miller para a base 2 se: 
+                                            -> b^t = +- 1 mod(n)
+                                                Ou 
+                                            -> b^(2j * t) = -1 mod(n), 0<=j<s-1
 
+Fatorizar usando o algoritmo (p-1)-Pollard: 
+-> n = 77 (numero a ser fatorizado)
+-> a = 2; b = 2; 
+-> b = b^2 + 1 mod n 
+-> a = a^2 +1 mod n (2 vezes)
+-> calcular d = mdc(a-b,n)
+-> se d = n entao terminar
+
+p-pollard: 
+-> Encontrar um fator nao trivial de n: 
+-> x0 comeca sempre a 2 
+-> fazer a = f(f(x0)) mod n e b = f(x0) mod n 
+-> se mdc(a-b,n)=1, entao fazer outra vez a = f(f(x0)) mod n e b = f(x0)mod n 
+
+(p-1)-pollard: 
+-> fatorizar n 
+-> x0 comeca sempre a 2 
+-> se mdc(2,n)=1 (k=2,3,...)
+-> fazer mdc(2^(k! -1),n)
+
+Lucas lemmer para verificar se sao primos: 
+->r1 começa sempre a 4 
+-> p primo
+-> verificar Mp = 2^p - 1 é primo 
+-> r2 = r1^2 - 2 
+-> fazer ate r(p-1) e se r(p-1) = 0 mod (Mp) 
+
+Solovay-Strossem: 
+-> n é impar 
+-> base b tem de estar entre 1 e n-1
+-> Passa no teste se (b/n) = b^((n-1)/2) mod (n) ou b^((n-1)/2) = (b/n) mod n 
+
+
+Mostrar que nao existem solucoes para a congruencia: 
+-> se for linear (quando ax(sem expoente)):  
+        -> fazer mdc (a,n) = 1 entao tem uma soluca e assim 
+
+-> se nao for linear (ax^k = b mod n): 
+        -> existem solucoes se b/n = 1
